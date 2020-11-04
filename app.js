@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get("/", (req, res) =>{
-    res.sendFile(__dirname + "\\signup.html");
+    res.sendFile(__dirname + "/signup.html");
 });
 
 app.post("/", (req, res) => {
@@ -45,10 +45,10 @@ app.post("/", (req, res) => {
         response.on("data", (data) => {
             const unpackedData = JSON.parse(data);
             if (unpackedData.error_count >= 1){
-                res.sendFile(__dirname + "\\failure.html");
+                res.sendFile(__dirname + "/failure.html");
             }
             else {
-                res.sendFile(__dirname + "\\success.html");
+                res.sendFile(__dirname + "/success.html");
             }
         })
     });
